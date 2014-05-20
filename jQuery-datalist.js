@@ -12,7 +12,7 @@ jQuery datalist plugin
 
 
     $.fn.datalist = function(options) {
-
+ 
         //set options
         var _options = $.extend({}, $.fn.datalist.defaults, options);
 
