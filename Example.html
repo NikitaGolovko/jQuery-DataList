@@ -31,6 +31,11 @@
     <div class="container">
         <div class="starter-template">
             <h1>Bootstrap data list navigation template</h1>
+            <div class="row"">
+                <div class="col-md-offset-9 col-md-3">
+                    <input type="text" id="txtMyListSearch" placeholder="Search" class="form-control" />
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <ul id="myList" class="list-unstyled" style="max-height:300px; overflow: auto;">
@@ -105,7 +110,9 @@
     <script type="text/javascript">
     //initialize the list
     $(document).ready(function() {
-        $('#myList').datalist();
+        $('#myList').datalist({
+            searchControlName: 'txtMyListSearch'
+        });
     });
     </script>
 </body>
