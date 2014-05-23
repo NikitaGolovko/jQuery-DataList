@@ -23,8 +23,9 @@
     optionAll: true,                    // Include the ALL button
     optionOther: false,                // Include a '...' option to filter non-english characters by
     optionNums: true,                  // Include a '0-9' option to filter by
-    removeDisabled: false,              // Remove those 'ln-disabled' nav items (flagDisabled must be set to true for this to function)
+    removeDisabled: false,              // Remove the disabled elements from navigation items
     notFoundText: 'No matching entries', // set custom text for nav items with no content to show
-    searchControlName: ''               // Set the search control ID to bind the search functionality to. 
+    searchControlName: '',               // Set the search control ID to bind the search functionality to. 
+    navigationClass: 'btn-default'		// Set the navigation control classes. EIther default bootstrap classes: btn-default, btn-primary or your own classes
 
 });</code></pre>

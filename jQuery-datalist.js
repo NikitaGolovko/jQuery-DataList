@@ -144,18 +144,18 @@ jQuery datalist plugin
 
             //include option for All
             if (_options.optionAll) {
-                markup += '<button type="button" class="btn btn-default" value="' + CONST_OPTION_ALL + '">All</button>'
+                markup += '<button type="button" class="btn '+ _options.navigationClass + '" value="' + CONST_OPTION_ALL + '">All</button>'
 
             }
 
             //Include numbers
             if (_options.optionNums) {
-                markup += '<button type="button" class="btn btn-default" value="' + CONST_OPTION_NUMBERS + '" disabled="disabled">0-9</button>'
+                markup += '<button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_OPTION_NUMBERS + '" disabled="disabled">0-9</button>'
             }
 
             //Build the remaining list
             for (var i = 1; i < CONST_ALPHABET.length; i++) {
-                markup += '<button type="button" class="btn btn-default" value="' + CONST_ALPHABET[i] + '" disabled="disabled">' + CONST_ALPHABET[i] + '</button>'
+                markup += '<button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_ALPHABET[i] + '" disabled="disabled">' + CONST_ALPHABET[i] + '</button>'
             }
 
             return '<div class="btn-group block navigation">' + markup + '</div>'
@@ -172,6 +172,7 @@ jQuery datalist plugin
         optionNums: true,
         removeDisabled: false,
         notFoundText: 'No matching entries found',
-        searchControlName: ''
+        searchControlName: '',
+        navigationClass: 'btn-default'
     };
 })(jQuery);
