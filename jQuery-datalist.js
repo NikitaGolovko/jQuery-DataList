@@ -56,11 +56,15 @@ jQuery datalist plugin
                     var firstLetter = this.innerText[0].toLowerCase();
                     //Enable the letter in navigation
                     if (CONST_ALPHABET.indexOf(firstLetter) > -1) {
-                        $('button[type=button][value="' + firstLetter + '"]').removeAttr('disabled');
+                        $('button[type=button][value="' + firstLetter + '"]').removeAttr('disabled').removeClass('hidden');
                         $(this).addClass(firstLetter);
                     }
                 }
             });
+
+            if (!(_options.removeDisabled)) {
+                 $('button[type="button"][disabled="disabled"]', $navigation).removeClass('hidden')
+            }
 
 
             //Bind elements
@@ -144,7 +148,7 @@ jQuery datalist plugin
 
             //include option for All
             if (_options.optionAll) {
-                markup += '<button type="button" class="btn '+ _options.navigationClass + '" value="' + CONST_OPTION_ALL + '">All</button>'
+                markup += '<button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_OPTION_ALL + '">All</button>'
 
             }
 
@@ -155,7 +159,7 @@ jQuery datalist plugin
 
             //Build the remaining list
             for (var i = 1; i < CONST_ALPHABET.length; i++) {
-                markup += '<button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_ALPHABET[i] + '" disabled="disabled">' + CONST_ALPHABET[i] + '</button>'
+                markup += '<button type="button" class="btn ' + _options.navigationClass + ' hidden" value="' + CONST_ALPHABET[i] + '" disabled="disabled">' + CONST_ALPHABET[i] + '</button>'
             }
 
             return '<div class="btn-group block navigation">' + markup + '</div>'
