@@ -3,7 +3,8 @@ jQuery datalist plugin
 */
 (function($) {
     //Global variables & Constants
-    var CONST_ALPHABET = ['_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '-'];
+    var CONST_ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    var CONST_OTHERS = '±'
     var CONST_OPTION_ALL = 'OptionAll';
     var CONST_OPTION_NUMBERS = 'OptionNumbers';
     var CONST_EVENT_TYPE_TOUCH = 'touchstart';
@@ -160,6 +161,10 @@ jQuery datalist plugin
             //Build the remaining list
             for (var i = 1; i < CONST_ALPHABET.length; i++) {
                 markup += '<button type="button" class="btn ' + _options.navigationClass + ' hidden" value="' + CONST_ALPHABET[i] + '" disabled="disabled">' + CONST_ALPHABET[i] + '</button>'
+            }
+
+            if (_options.optionOther) {
+                markup += '<button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_OTHERS + '" disabled="disabled">'+ CONST_OTHERS + '</button>' 
             }
 
             return '<div class="btn-group block navigation">' + markup + '</div>'
