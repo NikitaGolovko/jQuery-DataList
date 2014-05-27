@@ -5,7 +5,9 @@ jQuery datalist plugin
     //Global variables & Constants
     var CONST_ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     var CONST_ALPHABET_OTHERS = ['!', '@', '#', '$', '%', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', ';', ':', '"', '<', '>', '.'];
+    var CONST_ALPHABET_NUMERIC = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
     var CONST_OTHERS = '...';
+    var CONST_NUMBERS = '0-9';
     var CONST_OPTION_ALL = 'OptionAll';
     var CONST_OPTION_NUMBERS = 'OptionNumbers';
     var CONST_EVENT_TYPE_TOUCH = 'touchstart';
@@ -66,6 +68,13 @@ jQuery datalist plugin
                     if (CONST_ALPHABET_OTHERS.indexOf(firstLetter) > -1) {
                         $('button[type=button][value="' + CONST_OTHERS + '"]').removeAttr('disabled').removeClass('hidden');
                         $(this).addClass(CONST_OTHERS);
+                    }
+
+
+                    //Enable navigation element for 'optionNums' if those actually exist
+                    if (CONST_ALPHABET_NUMERIC.indexOf(firstLetter) > -1) {
+                        $('button[type=button][value="' + CONST_OPTION_NUMBERS + '"]').removeAttr('disabled').removeClass('hidden');
+                        $(this).addClass(CONST_OPTION_NUMBERS);
                     }
                 }
             });
@@ -162,7 +171,7 @@ jQuery datalist plugin
 
             //Include numbers
             if (_options.optionNums) {
-                markup += '<button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_OPTION_NUMBERS + '" disabled="disabled">0-9</button>'
+                markup += '<button type="button" class="btn ' + _options.navigationClass + ' hidden" value="' + CONST_OPTION_NUMBERS + '" disabled="disabled">' + CONST_NUMBERS + '</button>'
             }
 
             //Build the remaining list
@@ -186,7 +195,7 @@ jQuery datalist plugin
         optionAll: true,
         optionOther: false,
         optionNums: true,
-        removeDisabled: false,
+        removeDisabled: true,
         notFoundText: 'No matching entries found',
         searchControlName: '',
         navigationClass: 'btn-default'
