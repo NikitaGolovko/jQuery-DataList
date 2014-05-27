@@ -4,7 +4,8 @@ jQuery datalist plugin
 (function($) {
     //Global variables & Constants
     var CONST_ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    var CONST_OTHERS = '±'
+    var CONST_ALPHABET_OTHERS = ['!', '@', '#', '$', '%', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', ';', ':', '"', '<', '>', '.'];
+    var CONST_OTHERS = '...';
     var CONST_OPTION_ALL = 'OptionAll';
     var CONST_OPTION_NUMBERS = 'OptionNumbers';
     var CONST_EVENT_TYPE_TOUCH = 'touchstart';
@@ -60,11 +61,17 @@ jQuery datalist plugin
                         $('button[type=button][value="' + firstLetter + '"]').removeAttr('disabled').removeClass('hidden');
                         $(this).addClass(firstLetter);
                     }
+
+                    //Enable navigation element for 'otherOptions'
+                    if (CONST_ALPHABET_OTHERS.indexOf(firstLetter) > -1) {
+                        $('button[type=button][value="' + CONST_OTHERS + '"]').removeAttr('disabled').removeClass('hidden');
+                        $(this).addClass(CONST_OTHERS);
+                    }
                 }
             });
 
             if (!(_options.removeDisabled)) {
-                 $('button[type="button"][disabled="disabled"]', $navigation).removeClass('hidden')
+                $('button[type="button"][disabled="disabled"]', $navigation).removeClass('hidden')
             }
 
 
@@ -164,7 +171,7 @@ jQuery datalist plugin
             }
 
             if (_options.optionOther) {
-                markup += '<button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_OTHERS + '" disabled="disabled">'+ CONST_OTHERS + '</button>' 
+                markup += '<button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_OTHERS + '" disabled="disabled">' + CONST_OTHERS + '</button>'
             }
 
             return '<div class="btn-group block navigation">' + markup + '</div>'

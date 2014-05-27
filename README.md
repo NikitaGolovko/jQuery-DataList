@@ -21,7 +21,7 @@
 <pre><code>$("myList").listnav({
 	initLetter: '',                     // filter the list to a specific letter on init ('a'-'z', '-' [numbers 0-9], '_' [other])
     optionAll: true,                    // Include the ALL button
-    optionOther: false,                // Include a '...' option to filter non-english characters by
+    optionOther: false,                // Include a '...' option to filter special charachters by
     optionNums: true,                  // Include a '0-9' option to filter by
     removeDisabled: false,              // Remove the disabled elements from navigation items. Does not apply to artificially added elements (optionAll/optionNums/optionOther)
     notFoundText: 'No matching entries', // set custom text for nav items with no content to show
