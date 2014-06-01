@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jquery-datalist by NikitaGolovko</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Jquery-datalist</h1>
+        <p>jQuery Datalist extension for Bootstrap creates a letter based navigation for your lists. </p>
+
+        <p class="view"><a href="https://github.com/NikitaGolovko/jQuery-DataList">View the Project on GitHub <small>NikitaGolovko/jQuery-DataList</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/NikitaGolovko/jQuery-DataList/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/NikitaGolovko/jQuery-DataList/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/NikitaGolovko/jQuery-DataList">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="jquery-datalist" class="anchor" href="#jquery-datalist"><span class="octicon octicon-link"></span></a>jQuery DataList</h1>
+
+<blockquote>
+<p>jQuery plug-in inspired by ListNav plugin originally created and maintained by <a href="https://github.com/esteinborn/jquery-listnav">Eric Steinborn</a> will add a slick "letter-based" navigation bar to all of your lists with the proper Bootstrap markup. Click a letter to quickly filter the list to show items that match that letter. The next release of this extension will also add a search functionality that you can bind to your controls.</p>
+</blockquote>
+
+<h2>
+<a name="manual-install" class="anchor" href="#manual-install"><span class="octicon octicon-link"></span></a>Manual Install</h2>
+
+<h4>
+<a name="insert-into-head" class="anchor" href="#insert-into-head"><span class="octicon octicon-link"></span></a>Insert into &lt;Head&gt;:</h4>
+
+<pre><code>&lt;link rel="stylesheet" href="datalist.css"&gt;</code></pre>
+
+<h4>
+<a name="code-up-your-list" class="anchor" href="#code-up-your-list"><span class="octicon octicon-link"></span></a>Code up your list:</h4>
+
+<pre><code>&lt;ul id="myList"&gt;...&lt;/ul&gt;</code></pre>
+
+<h4>
+<a name="append-the-search-control" class="anchor" href="#append-the-search-control"><span class="octicon octicon-link"></span></a>Append the search control:</h4>
+
+<h4>
+<a name="insert-before-body" class="anchor" href="#insert-before-body"><span class="octicon octicon-link"></span></a>Insert before &lt;/body&gt;:</h4>
+
+<pre><code>&lt;script src="jQuery-datalist.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    $("#myList").datalist();
+&lt;/script&gt;</code></pre>
+
+<h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<pre><code>$("myList").listnav({
+    initLetter: '',                     // filter the list to a specific letter on init ('a'-'z', '-' [numbers 0-9], '_' [other])
+    optionAll: true,                    // Include the ALL button
+    optionOther: false,                // Include a '...' option to filter special charachters by
+    optionNums: true,                  // Include a '0-9' option to filter by
+    removeDisabled: false,              // Remove the disabled elements from navigation items. Does not apply to artificially added elements (optionAll/optionNums/optionOther)
+    notFoundText: 'No matching entries', // set custom text for nav items with no content to show
+    searchControlName: '',               // Set the search control ID to bind the search functionality to. 
+    navigationClass: 'btn-default'      // Set the navigation control classes. EIther default bootstrap classes: btn-default, btn-primary or your own classes
+
+});</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/NikitaGolovko">NikitaGolovko</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
