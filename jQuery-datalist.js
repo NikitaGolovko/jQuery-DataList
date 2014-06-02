@@ -60,27 +60,27 @@ jQuery datalist plugin
                     var firstLetter = this.innerText[0].toLowerCase();
                     //Enable the letter in navigation
                     if (CONST_ALPHABET.indexOf(firstLetter) > -1) {
-                        $('button[type=button][value="' + firstLetter + '"]').removeAttr('disabled').removeClass('hidden');
+                        $('button[type=button][value="' + firstLetter + '"]').removeAttr('disabled').parent().removeClass('hidden');
                         $(this).addClass(firstLetter);
                     }
 
                     //Enable navigation element for 'otherOptions'
                     if (CONST_ALPHABET_OTHERS.indexOf(firstLetter) > -1) {
-                        $('button[type=button][value="' + CONST_OTHERS + '"]').removeAttr('disabled').removeClass('hidden');
+                        $('button[type=button][value="' + CONST_OTHERS + '"]').removeAttr('disabled').parent().removeClass('hidden');
                         $(this).addClass(CONST_OTHERS);
                     }
 
 
                     //Enable navigation element for 'optionNums' if those actually exist
                     if (CONST_ALPHABET_NUMERIC.indexOf(firstLetter) > -1) {
-                        $('button[type=button][value="' + CONST_OPTION_NUMBERS + '"]').removeAttr('disabled').removeClass('hidden');
+                        $('button[type=button][value="' + CONST_OPTION_NUMBERS + '"]').removeAttr('disabled').parent().removeClass('hidden');
                         $(this).addClass(CONST_OPTION_NUMBERS);
                     }
                 }
             });
 
             if (!(_options.removeDisabled)) {
-                $('button[type="button"][disabled="disabled"]', $navigation).removeClass('hidden')
+                $('button[type="button"][disabled="disabled"]', $navigation).parent().removeClass('hidden')
             }
 
 
@@ -165,25 +165,25 @@ jQuery datalist plugin
 
             //include option for All
             if (_options.optionAll) {
-                markup += '<button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_OPTION_ALL + '">All</button>'
+                markup += '<div class="btn-group"><button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_OPTION_ALL + '">All</button></div>'
 
             }
 
             //Include numbers
             if (_options.optionNums) {
-                markup += '<button type="button" class="btn ' + _options.navigationClass + ' hidden" value="' + CONST_OPTION_NUMBERS + '" disabled="disabled">' + CONST_NUMBERS + '</button>'
+                markup += '<div class="btn-group hidden"><button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_OPTION_NUMBERS + '" disabled="disabled">' + CONST_NUMBERS + '</button></div>'
             }
 
             //Build the remaining list
             for (var i = 1; i < CONST_ALPHABET.length; i++) {
-                markup += '<button type="button" class="btn ' + _options.navigationClass + ' hidden" value="' + CONST_ALPHABET[i] + '" disabled="disabled">' + CONST_ALPHABET[i] + '</button>'
+                markup += '<div class="btn-group hidden"><button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_ALPHABET[i] + '" disabled="disabled">' + CONST_ALPHABET[i] + '</button></div>'
             }
 
             if (_options.optionOther) {
-                markup += '<button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_OTHERS + '" disabled="disabled">' + CONST_OTHERS + '</button>'
+                markup += '<div class="btn-group"><button type="button" class="btn ' + _options.navigationClass + '" value="' + CONST_OTHERS + '" disabled="disabled">' + CONST_OTHERS + '</button></div>'
             }
 
-            return '<div class="btn-group block navigation">' + markup + '</div>'
+            return '<div class="btn-group btn-group-justified block navigation">' + markup + '</div>'
         }
 
         //set the individual item classes & remove items not needed
