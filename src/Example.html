@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="datalist.css">
+    <style>
+    body {
+        padding-top: 50px;
+    }
+    .starter-template {
+        padding: 40px 15px;
+        text-align: center;
+    }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="starter-template">
+            <h1>Bootstrap data list navigation template</h1>
+            <div class="row">
+                <div class="col-md-offset-9 col-md-3">
+                    <input type="text" id="txtMyListSearch" placeholder="Search" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul id="myList" class="list-unstyled" style="max-height:300px; overflow: auto;">
+                        <li>Alabama</li>
+                        <li>Alaska</li>
+                        <li>Arizona</li>
+                        <li>Arkansas</li>
+                        <li>California</li>
+                        <li>Colorado</li>
+                        <li>Connecticut</li>
+                        <li>Delaware</li>
+                        <li>Florida</li>
+                        <li>Georgia</li>
+                        <li>Hawaii</li>
+                        <li>Idaho</li>
+                        <li>Illinois</li>
+                        <li>Indiana</li>
+                        <li>Iowa</li>
+                        <li>Kansas</li>
+                        <li>Kentucky</li>
+                        <li>Louisiana</li>
+                        <li>Maine</li>
+                        <li>Maryland</li>
+                        <li>Massachusetts</li>
+                        <li>Michigan</li>
+                        <li>Minnesota</li>
+                        <li>Mississippi</li>
+                        <li>Missouri</li>
+                        <li>Montana</li>
+                        <li>Nebraska</li>
+                        <li>Nevada</li>
+                        <li>New Hampshire</li>
+                        <li>New Jersey</li>
+                        <li>New Mexico</li>
+                        <li>New York</li>
+                        <li>North Carolina</li>
+                        <li>North Dakota</li>
+                        <li>Ohio</li>
+                        <li>Oklahoma</li>
+                        <li>Oregon</li>
+                        <li>Pennsylvania</li>
+                        <li>Rhode Island</li>
+                        <li>South Carolina</li>
+                        <li>South Dakota</li>
+                        <li>Tennessee</li>
+                        <li>Texas</li>
+                        <li>Utah</li>
+                        <li>Vermont</li>
+                        <li>Virginia</li>
+                        <li>Washington</li>
+                        <li>West Virginia</li>
+                        <li>Wisconsin</li>
+                        <li>Wyoming</li>
+                        <li>-TestWyoming</li>
+                        <li>+TestWyoming</li>
+                        <li>_TestWyoming</li>
+                        <li>%TestWyoming</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <script src="jQuery-datalist.js"></script>
+
+    <script type="text/javascript">
+    //initialize the list
+    $(document).ready(function() {
+        $('#myList').datalist({
+            searchControlName: 'txtMyListSearch',
+            navigationClass: 'btn-default',
+            //removeDisabled: true,
+            optionOther: true
+        });
+    });
+    </script>
+</body>
+
+</html>
