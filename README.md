@@ -2,6 +2,8 @@
 
 > jQuery plug-in inspired by ListNav plugin originally created and maintained by [Eric Steinborn](https://github.com/esteinborn/jquery-listnav) will add a slick "letter-based" navigation bar to all of your lists with the proper Bootstrap markup. Click a letter to quickly filter the list to show items that match that letter. The next release of this extension will also add a search functionality that you can bind to your controls.
 
+## Sample
+To understand better what this extension accomplishes - check out this [sample page](http://nikitagolovko.github.io/jQuery-DataList/)!
 
 ## Manual Install
 #### Insert into &lt;Head&gt;:
